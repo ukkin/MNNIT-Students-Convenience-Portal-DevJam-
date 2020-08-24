@@ -21,15 +21,14 @@
 
 
 <fieldset style = "width: 600px; margin:  400px ">
-<form method="POST" action="#">
+<form method="POST" action="">
     <div class="new">
         <div class="white">
     <div class="left1"><br>
    
   </div>
 
-<form action="" method="post">
-  <div class="container">
+<div class="container">
     <h1>Student's Sign Up</h1><br>
     <p>Please fill in this form to create an account.</p><br>
     
@@ -55,25 +54,25 @@
 $con=mysqli_connect("localhost","root","","login");
 if(isset($_POST['Upload']))
 {
-  $email= $_POST['email'];
-  $psw=$_POST['psw'];
-  $psw2=$_POST['psw-repeat'];
-  if($psw==$psw2){
-$query="INSERT INTO student_info (student_id, Password) VALUES ('$email','$psw')";
-if(mysqli_query($con, $query))
-{
-    header('location: http://localhost/login_page.php', true, 307); 
-    exit();
-}
-else
-{
-    header('location: http://localhost/signup1.php', true, 307);       
-    exit();
-}
-  }
-  else{
-      echo "Passwords do not match. Try again.";
-  }
+	$email= $_POST['email'];
+	$psw=$_POST['psw'];
+	$psw2=$_POST['psw-repeat'];
+	if($psw==$psw2){
+		$query="INSERT INTO student_info (student_id, Password) VALUES ('$email','$psw')";
+		if(mysqli_query($con, $query))
+		{
+			header('location: http://localhost/login/login_page.php', true, 307); 
+			exit();
+		}
+		else
+		{
+			header('location: http://localhost/login/signup1.php', true, 307);       
+			exit();
+		}
+	}
+	else{
+		echo "Passwords do not match. Try again.";
+	}
 }
 
 ?>
