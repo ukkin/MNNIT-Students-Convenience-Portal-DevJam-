@@ -74,7 +74,7 @@
 			
 			  $sqlDelete="Delete from student_menu where student_id=$_SESSION[x]";
 			  $qsql=mysqli_query($con,$sqlDelete);
-			$query="UPDATE details SET Name='$name',Contact='$contact',Email='$email',Category='$categ',DOB='$dob' WHERE student_id='$reg'";
+			$query="INSERT INTO details (Name,Contact,Email,Category,DOB,student_id) VALUES('$name','$contact','$email','$categ','$dob','$reg')";
 			
 			if(mysqli_query($con, $query))
 			{
