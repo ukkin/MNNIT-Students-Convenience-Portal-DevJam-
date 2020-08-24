@@ -33,13 +33,12 @@ if(isset($_POST["submit"]))
 		if(mysqli_num_rows($qsql)==1)
 		{
 			session_start();
-			$rs = mysqli_fetch_array($qsql);
-			$_SESSION["x"] = $rs['student_id'];			
-			$_SESSION["password"] = $rs['password'];			
-			//$_SESSION["user_type"] = $rs[type];
+			$result_set = mysqli_fetch_array($qsql);
+			$_SESSION["x"] = $result_set['student_id'];			
+			$_SESSION["password"] = $result_set['password'];
 			echo $_SESSION["x"];
 			header('Location: home.php');
-    }
+		}
 		else
 		{
 			echo "<script>alert('Invalid Login ID and password entered...')</script>";	
@@ -83,7 +82,7 @@ if(isset($_POST["submit"]))
           .<br><button name="submit" type="submit">Login</button>
     </div>
 <div class="left6">
-    <b><br>Not registered yet ? <a href="signup1.php">Sign Up </a> <br><br>
+    <b><br>Not registered yet ? <a href="signup.php">Sign Up </a> <br><br>
     For Teacher's login <a href="teacher.php">Click here </a> 
 
 

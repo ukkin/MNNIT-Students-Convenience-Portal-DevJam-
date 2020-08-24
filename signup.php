@@ -66,7 +66,7 @@ if(isset($_POST['Upload']))
 		}
 		else
 		{
-			header('location: http://localhost/login/signup1.php', true, 307);       
+			header('location: http://localhost/login/signup.php', true, 307);       
 			exit();
 		}
 	}
